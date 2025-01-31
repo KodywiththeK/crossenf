@@ -1,0 +1,202 @@
+[
+  {
+    "id": 1,
+    "price": 10000,
+    "status": "FOR_SALE",
+    "thumbnail_img_url": "http://bit.ly/48LHcN4",
+    "star_rate_avg": 4,
+    "name": "Nuts / Honey Special",
+    "discount_rate": 46,
+    "discount_price": 5400
+  },
+  {
+    "id": 2,
+    "price": 12000,
+    "status": "FOR_SALE",
+    "thumbnail_img_url": "https://bit.ly/4fB6RKI",
+    "star_rate_avg": 3,
+    "name": "Peanut Chocoball / Sunflower Seeds Chocoball",
+    "discount_rate": 50,
+    "discount_price": 6000
+  },
+  {
+    "id": 3,
+    "price": 4500,
+    "status": "FOR_SALE",
+    "thumbnail_img_url": "https://bit.ly/3Z0YLoW",
+    "star_rate_avg": 0,
+    "name": "Orion Custard Cake (12 pcs)",
+    "discount_rate": 0,
+    "discount_price": 4500
+  },
+  {
+    "id": 4,
+    "price": 7200,
+    "status": "FOR_SALE",
+    "thumbnail_img_url": "https://bit.ly/3YIdeoB",
+    "star_rate_avg": 3,
+    "name": "Frozen shrimp (8g x 20ea)",
+    "discount_rate": 0,
+    "discount_price": 7200
+  },
+  {
+    "id": 5,
+    "price": 5700,
+    "status": "FOR_SALE",
+    "thumbnail_img_url": "https://bit.ly/48UEu7V",
+    "star_rate_avg": 4,
+    "name": "CJ Baekseol Spam Mild (340g)",
+    "discount_rate": 36,
+    "discount_price": 3648
+  },
+  {
+    "id": 6,
+    "price": 5700,
+    "status": "FOR_SALE",
+    "thumbnail_img_url": "https://bit.ly/3Z4zNFs",
+    "star_rate_avg": 1.5,
+    "name": "Mizukan 2x tzuyu (500 ml)",
+    "discount_rate": 0,
+    "discount_price": 5700
+  },
+  {
+    "id": 7,
+    "price": 5700,
+    "status": "SOLD_OUT",
+    "thumbnail_img_url": "https://bit.ly/48OOLCL",
+    "star_rate_avg": 0,
+    "name": "S&B Okazu Rayu Pepper Oil (110 g)",
+    "discount_rate": 0,
+    "discount_price": 5700
+  },
+  {
+    "id": 8,
+    "price": 5700,
+    "status": "FOR_SALE",
+    "thumbnail_img_url": "https://bit.ly/3Cn8PQl",
+    "star_rate_avg": 0,
+    "name": "Pepper Garlic Sauce La Sauce (226g)",
+    "discount_rate": 0,
+    "discount_price": 5700
+  },
+  {
+    "id": 9,
+    "price": 5600,
+    "status": "FOR_SALE",
+    "thumbnail_img_url": "https://bit.ly/4fn0Ql3",
+    "star_rate_avg": 4.5,
+    "name": "Coffee-flavored peanuts from rally time (500g)",
+    "discount_rate": 20,
+    "discount_price": 4480
+  },
+  {
+    "id": 10,
+    "price": 5500,
+    "status": "FOR_SALE",
+    "thumbnail_img_url": "https://bit.ly/3Cp9aSx",
+    "star_rate_avg": 2.5,
+    "name": "Ramnos Refrigerated Blueberry Fruit Cheese (125g)",
+    "discount_rate": 0,
+    "discount_price": 5500
+  },
+  {
+    "id": 11,
+    "price": 5400,
+    "status": "FOR_SALE",
+    "thumbnail_img_url": "https://bit.ly/3Co67do",
+    "star_rate_avg": 5,
+    "name": "Heechang Dairy New Milk Powder (1 kg)",
+    "discount_rate": 0,
+    "discount_price": 5400
+  },
+  {
+    "id": 12,
+    "price": 5400,
+    "status": "FOR_SALE",
+    "thumbnail_img_url": "https://bit.ly/3O3CQaq",
+    "star_rate_avg": 0,
+    "name": "Sunflower seed oil (1L)",
+    "discount_rate": 0,
+    "discount_price": 5400
+  },
+  {
+    "id": 13,
+    "price": 5400,
+    "status": "FOR_SALE",
+    "thumbnail_img_url": "https://bit.ly/3O4rFy7",
+    "star_rate_avg": 1,
+    "name": "Suri Tamarind (227g)",
+    "discount_rate": 70,
+    "discount_price": 1620
+  },
+  {
+    "id": 14,
+    "price": 5400,
+    "status": "FOR_SALE",
+    "thumbnail_img_url": "https://bit.ly/3ADwaNb",
+    "star_rate_avg": 0,
+    "name": "Dongwon sea snail (230g)",
+    "discount_rate": 30,
+    "discount_price": 3780
+  },
+  {
+    "id": 15,
+    "price": 5300,
+    "status": "FOR_SALE",
+    "thumbnail_img_url": "https://bit.ly/4foPBs2",
+    "star_rate_avg": 3,
+    "name": "Gompyo's strong flour (2.5kg)",
+    "discount_rate": 0,
+    "discount_price": 5300
+  },
+  {
+    "id": 16,
+    "price": 5300,
+    "status": "SOLD_OUT",
+    "thumbnail_img_url": "https://bit.ly/3UQL3T7",
+    "star_rate_avg": 0,
+    "name": "CJ Baekseol Spam Classic (340g)",
+    "discount_rate": 0,
+    "discount_price": 5300
+  },
+  {
+    "id": 17,
+    "price": 5200,
+    "status": "FOR_SALE",
+    "thumbnail_img_url": "https://bit.ly/3Z1o9Ls",
+    "star_rate_avg": 5,
+    "name": "Kirkland Signature Chicken Chest (354g)",
+    "discount_rate": 42,
+    "discount_price": 3016
+  },
+  {
+    "id": 18,
+    "price": 5200,
+    "status": "FOR_SALE",
+    "thumbnail_img_url": "https://bit.ly/3AzRXW5",
+    "star_rate_avg": 3,
+    "name": "Fried pork cutlet powder (1kg)",
+    "discount_rate": 0,
+    "discount_price": 5200
+  },
+  {
+    "id": 19,
+    "price": 5400,
+    "status": "FOR_SALE",
+    "thumbnail_img_url": "https://bit.ly/3AG1N8Y",
+    "star_rate_avg": 4,
+    "name": "Seoul Milk Refrigerated Cheddar Cheese 10 sheets (180 g)",
+    "discount_rate": 0,
+    "discount_price": 5400
+  },
+  {
+    "id": 20,
+    "price": 5100,
+    "status": "FOR_SALE",
+    "thumbnail_img_url": "https://bit.ly/3Z6d9wp",
+    "star_rate_avg": 5,
+    "name": "Ottogi wasabi (100g)",
+    "discount_rate": 60,
+    "discount_price": 2040
+  }
+]
