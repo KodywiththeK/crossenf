@@ -2,7 +2,8 @@
   "compilerOptions": {
     "baseUrl": ".",
     "paths": {
-      "@common/utils": ["src/main.tsx"]
+      // "@common/design": ["src/main.tsx"],
+      "@/*": ["./src/*"]
     },
     "target": "ES2020",
     "useDefineForClassFields": true,
@@ -24,6 +25,6 @@
     "noFallthroughCasesInSwitch": true,
     "noUncheckedSideEffectImports": true
   },
-  "include": ["src", "../../packages/common/src/**/*"],
+  "include": ["src", "src/**/*"],
   "extends": "../../tsconfig.base.json"
 }

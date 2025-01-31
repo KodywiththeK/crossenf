@@ -1,0 +1,96 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: #ffffff;
+    --foreground: #232630;
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 3.9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 3.9%;
+    --primary: #1d45d2;
+    --primary-foreground: #ffffff;
+    --secondary: #46474d;
+    --secondary-foreground: #ffffff;
+    --muted: #cdced1;
+    --muted-foreground: #ffffff;
+    --accent: 0 0% 96.1%;
+    --accent-foreground: 0 0% 9%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+    --border: #f0f1f5;
+    --input: 0 0% 89.8%;
+    --ring: 0 0% 3.9%;
+    --radius: 0.5rem;
+    --primary-50: #f5f7ff;
+    --primary-100: #dfe5ff;
+    --primary-200: #d1daff;
+    --primary-300: #a1b4ff;
+    --primary-400: #6d89fc;
+    --primary-500: #4363e6;
+    --primary-600: #1d45d2;
+    --primary-650: #394ca7;
+    --primary-700: #253794;
+    --primary-800: #2a3973;
+    --primary-900: #2b314a;
+    --grey-50: #fafafc;
+    --grey-100: #f7f8fa;
+    --grey-200: #f0f1f5;
+    --grey-300: #e1e2e6;
+    --grey-400: #cdced1;
+    --grey-500: #adaeb3;
+    --grey-600: #88898c;
+    --grey-700: #6b6c73;
+    --grey-800: #46474d;
+    --grey-900: #232630;
+    --red-50: #fdeaed;
+    --red-100: #fbd4db;
+    --red-200: #f8aab7;
+    --red-300: #f47f94;
+    --red-400: #f15570;
+    --red-500: #ed2a4c;
+    --red-600: #c52946;
+    --red-700: #9c2841;
+    --red-800: #74283b;
+    --red-900: #4b2736;
+    --green-50: #edf7f1;
+    --green-100: #dbf0e3;
+    --green-200: #b7e1c8;
+    --green-300: #92d2ac;
+    --green-400: #6ec391;
+    --green-500: #4ab475;
+    --green-600: #429867;
+    --green-700: #3a7b59;
+    --green-800: #335f4c;
+    --green-900: #2b423e;
+    --lightgreen-500: #00c308;
+    --yellow-50: #fffcef;
+    --yellow-100: #fffae0;
+    --yellow-200: #fff5c0;
+    --yellow-300: #fff0a1;
+    --yellow-400: #ffeb81;
+    --yellow-500: #ffe662;
+    --yellow-600: #d3c058;
+    --yellow-700: #a7994e;
+    --yellow-800: #7b7344;
+    --yellow-900: #4f4c3a;
+    --orange-50: #fff7ef;
+    --orange-500: #ff7e36;
+    --orange-550: #e86818;
+    --orange-600: #dc864e;
+    --brown-400: #a37f73;
+    --pink-600: #c365c6;
+    --lightblue-50: #eaf8ff;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}

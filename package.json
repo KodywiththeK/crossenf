@@ -10,6 +10,7 @@
     "prepare": "husky i && husky install",
     "postinstall": "npx mrm lint-staged",
     "common": "pnpm --filter @common/utils",
+    "components": "pnpm --filter @common/components",
     "shop": "pnpm --filter cross-shop"
   },
   "lint-staged": {

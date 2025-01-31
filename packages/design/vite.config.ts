@@ -6,7 +6,7 @@ export default defineConfig({
   plugins: [react()],
   resolve: {
     alias: {
-      "@common/utils": path.resolve(__dirname, "../../packages/common/src/main.ts"),
+      "@common/design": path.resolve(__dirname, "../../packages/design/src/main.ts"),
     },
   },
 });
