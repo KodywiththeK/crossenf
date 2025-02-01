@@ -11,14 +11,14 @@ export default function PriceTag({ price, discountPrice, discountRate }: PriceTa
   const isOnSale = discountRate > 0;
 
   return (
-    <Box className="flex items-center gap-0.5 md:gap-1 text-sm">
+    <Box className="flex items-center gap-0.5 text-sm md:gap-1">
       {isOnSale && (
         <Box className="flex items-center gap-1">
-          <span className="bg-destructive text-white text-xs px-2 py-1 rounded-md">
+          <span className="bg-destructive rounded-md px-2 py-1 text-xs text-white">
             {discountRate}%
           </span>
           <span className="text-muted line-through">₩{price.toLocaleString()}</span>
-          <span className="text-destructive font-semibold ">₩{discountPrice.toLocaleString()}</span>
+          <span className="text-destructive font-semibold">₩{discountPrice.toLocaleString()}</span>
         </Box>
       )}
       {!isOnSale && <span className="font-medium">₩{price.toLocaleString()}</span>}

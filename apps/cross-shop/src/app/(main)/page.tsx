@@ -7,7 +7,7 @@ export default async function Home() {
   return (
     <>
       <MainBannerSection />
-      <Container className="flex flex-col sm:py-6 py-4 md:py-10 sm:gap-10 gap-6">
+      <Container className="flex flex-col gap-6 py-4 sm:gap-10 sm:py-6 md:py-10">
         <ul className="flex flex-col gap-2">
           {products.map((product, idx) => (
             <li key={product.id}>{idx + product.name}</li>
