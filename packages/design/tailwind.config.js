@@ -12,6 +12,10 @@ export default {
       },
       colors: {
         background: "var(--background)",
+        secondary: {
+          DEFAULT: "var(--secondary)",
+          foreground: "var(--secondary-foreground)",
+        },
         foreground: "var(--foreground)",
         border: "var(--border)",
         input: "hsl(var(--input))",

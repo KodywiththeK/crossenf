@@ -2,6 +2,7 @@
 node_modules/
 pnpm-lock.yaml
 pnpm-workspace.yaml
+.DS_Store
 
 # 빌드 결과물
 apps/**/dist/
