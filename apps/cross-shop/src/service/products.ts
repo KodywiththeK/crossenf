@@ -1,3 +1,4 @@
+import { productSortingOptions } from "@/constant/product";
 import { Product } from "@/types/products";
 import { customFetch } from "@/utils/fetch/server/customFetch";
 
@@ -5,8 +6,10 @@ import { customFetch } from "@/utils/fetch/server/customFetch";
  * 상품 데이터를 가져오는 함수
  * @returns 전체 상품 리스트
  */
-export const getProducts = async () => {
-  return customFetch<Product[]>("products.json");
+export const getProducts = async (): Promise<Product[]> => {
+  const allProducts = await customFetch<Product[]>("products.json");
+  const defaultOption = Object.values(productSortingOptions).find((i) => i.isDefault);
+  return defaultOption?.sort(allProducts) || allProducts;
 };
 
 /**
