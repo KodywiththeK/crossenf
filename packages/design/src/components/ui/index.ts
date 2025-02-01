@@ -4,3 +4,5 @@ export * from "./icons";
 export * from "./toaster";
 export * from "./toast";
 export * from "./alert-dialog";
+export * from "./checkbox";
+export * from "./label";
