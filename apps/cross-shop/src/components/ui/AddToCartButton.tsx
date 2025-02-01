@@ -1,15 +1,28 @@
-import { Box, Button, buttonVariants, cn, Modal, ModalTrigger } from "@common/design";
+"use client";
+import {
+  Box,
+  Button,
+  buttonVariants,
+  cn,
+  Modal,
+  ModalTrigger,
+  ToastAction,
+  useToast,
+} from "@common/design";
 import { Product } from "@/types/products";
 import { useCartStore } from "@/store/useCart";
 import { CartItem } from "@/types/cart";
 import { productStatus } from "@/constant/product";
 import RemoveCartItemButton from "./RemoveCartItemButton";
+import { useRouter } from "next/navigation";
 
 type AddToCartButtonProps = {
   product: Product;
 };
 
 export default function AddToCartButton({ product }: AddToCartButtonProps) {
+  const router = useRouter();
+  const { toast } = useToast();
   const { cart, addToCart } = useCartStore();
   const cartItem = cart.find((item) => item.id === product.id);
   const isSoldOut = product.status === productStatus.SOLD_OUT.value;
@@ -21,8 +34,18 @@ export default function AddToCartButton({ product }: AddToCartButtonProps) {
     const cartProduct: CartItem = {
       ...product,
       quantity: 1,
+      isReady: false,
     };
     addToCart(cartProduct);
+    toast({
+      title: "장바구니에 담았습니다.",
+      description: "장바구니를 확인해보세요!",
+      action: (
+        <ToastAction altText="Go to Cart" onClick={() => router.push("/cart")}>
+          장바구니로 이동
+        </ToastAction>
+      ),
+    });
   };
 
   return (
