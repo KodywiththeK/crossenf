@@ -4,6 +4,7 @@ import { TanstackQueryProvider } from "@/providers/query-provider";
 import localFont from "next/font/local";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
+import UIProvider from "@/providers/ui-provider";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -31,6 +32,7 @@ export default function RootLayout({
             <Footer />
           </div>
         </TanstackQueryProvider>
+        <UIProvider />
       </body>
     </html>
   );
