@@ -142,9 +142,15 @@ export function Modal({
 export function ModalTrigger({
   children,
   className,
+  disabled,
 }: {
   children: React.ReactNode;
   className?: string;
+  disabled?: boolean;
 }) {
-  return <AlertDialogTrigger className={className}>{children}</AlertDialogTrigger>;
+  return (
+    <AlertDialogTrigger disabled={disabled} className={className}>
+      {children}
+    </AlertDialogTrigger>
+  );
 }
