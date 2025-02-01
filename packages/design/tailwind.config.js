@@ -5,6 +5,9 @@ export default {
   content: ["./index.html", "./src/**/*.{ts,tsx,js,jsx}", "../../apps/*/src/**/*.{js,ts,jsx,tsx}"],
   theme: {
     extend: {
+      screens: {
+        xs: "450px",
+      },
       borderRadius: {
         lg: "var(--radius)",
         md: "calc(var(--radius) - 2px)",
@@ -12,9 +15,14 @@ export default {
       },
       colors: {
         background: "var(--background)",
+        muted: "var(--muted)",
         secondary: {
           DEFAULT: "var(--secondary)",
           foreground: "var(--secondary-foreground)",
+        },
+        destructive: {
+          DEFAULT: "var(--destructive)",
+          foreground: "var(--destructive-foreground)",
         },
         foreground: "var(--foreground)",
         border: "var(--border)",
@@ -29,7 +37,7 @@ export default {
           foreground: "hsl(var(--popover-foreground))",
         },
         primary: {
-          DEFAULT: "var(--primary-600)",
+          DEFAULT: "var(--primary-500)",
           foreground: "var(--primary-foreground)",
           50: "var(--primary-50)",
           100: "var(--primary-100)",
