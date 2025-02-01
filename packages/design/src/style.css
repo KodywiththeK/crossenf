@@ -94,3 +94,14 @@
     @apply bg-background text-foreground;
   }
 }
+
+/* 숫자 입력 필드의 기본 증감 버튼 숨기기 */
+.hide-spinner::-webkit-outer-spin-button,
+.hide-spinner::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.hide-spinner {
+  -moz-appearance: textfield; /* Firefox */
+}
