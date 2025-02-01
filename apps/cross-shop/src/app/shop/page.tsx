@@ -1,5 +1,5 @@
 import React from "react";
 
 export default function ShopPage() {
-  return <div>ShopPage</div>;
+  return <div className="h-full">ShopPage</div>;
 }
