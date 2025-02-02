@@ -1,4 +1,5 @@
 "use client";
+import { route } from "@/constant/route";
 import { useResponsive } from "@/hooks/useResponsive";
 import { Button, Container } from "@common/design";
 import Image from "next/image";
@@ -20,7 +21,7 @@ export default function MainBannerSection() {
           className="w-full"
         />
         <Button
-          onClick={() => router.push("/shop")}
+          onClick={() => router.push(route.shop.path)}
           variant={"outline"}
           size={isMobile ? "md" : "lg"}
           className="absolute bottom-4 right-8 h-10 text-sm sm:text-base md:right-10 md:h-12 md:text-lg lg:right-14"

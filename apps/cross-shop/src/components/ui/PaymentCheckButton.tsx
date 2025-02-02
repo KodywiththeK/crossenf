@@ -1,3 +1,4 @@
+import { route } from "@/constant/route";
 import { useCartStore } from "@/store/useCart";
 import { buttonVariants, cn, Modal, ModalTrigger, ToastAction, useToast } from "@common/design";
 import { useRouter } from "next/navigation";
@@ -21,7 +22,7 @@ export default function PaymentCheckButton() {
       title: "결제가 완료되었습니다.",
       description: "다른 상품들도 더 둘러보세요!",
       action: (
-        <ToastAction altText="Go to Shop" onClick={() => router.push("/cart")}>
+        <ToastAction altText="Go to Shop" onClick={() => router.push(route.cart.path)}>
           보러가기
         </ToastAction>
       ),

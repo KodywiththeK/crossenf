@@ -15,6 +15,7 @@ import { CartItem } from "@/types/cart";
 import { productStatus } from "@/constant/product";
 import RemoveCartItemButton from "./RemoveCartItemButton";
 import { useRouter } from "next/navigation";
+import { route } from "@/constant/route";
 
 type AddToCartButtonProps = {
   product: Product;
@@ -41,7 +42,7 @@ export default function AddToCartButton({ product }: AddToCartButtonProps) {
       title: "장바구니에 담았습니다.",
       description: "장바구니를 확인해보세요!",
       action: (
-        <ToastAction altText="Go to Cart" onClick={() => router.push("/cart")}>
+        <ToastAction altText="Go to Cart" onClick={() => router.push(route.cart.path)}>
           장바구니로 이동
         </ToastAction>
       ),
@@ -72,12 +73,13 @@ export default function AddToCartButton({ product }: AddToCartButtonProps) {
               Add to Cart
             </ModalTrigger>
           }
-          title="카트가 가득 찼어요!"
+          title="장바구니가 가득 찼어요!"
           description={
-            "상품은 최대 세개까지 담을 수 있어요.\n카트에 담긴 물건을 먼저 삭제 혹은 주문해주세요."
+            "상품은 최대 세개까지 담을 수 있어요.\n장바구니에 담긴 물건을 삭제 혹은 주문해주세요."
           }
           confirmText="장바구니로 이동하기"
           cancelText="계속 둘러보기"
+          onConfirm={() => router.push(route.cart.path)}
         />
       ) : (
         <Button className="w-full" size={"sm"} onClick={handleAddToCart} disabled={isSoldOut}>

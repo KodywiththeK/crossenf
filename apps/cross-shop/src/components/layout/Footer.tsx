@@ -1,5 +1,6 @@
 import { Container } from "@common/design";
 import React from "react";
+import MobileNavBar from "./MobileNavBar";
 
 export default function Footer() {
   return (
@@ -10,9 +11,7 @@ export default function Footer() {
           <p>Frontend Developer. 김동성</p>
         </Container>
       </footer>
-      <nav className="sticky bottom-0 z-40 block bg-gray-100 py-5 text-center sm:hidden">
-        모바일 네비게이션바
-      </nav>
+      <MobileNavBar />
     </>
   );
 }

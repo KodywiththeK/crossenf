@@ -1,5 +1,6 @@
 import CartProductList from "@/components/cart/CartProductList";
 import TotalPriceAndOrder from "@/components/cart/TotalPriceAndOrder";
+import { route } from "@/constant/route";
 import { Box, buttonVariants, cn, Container, Icons } from "@common/design";
 import Link from "next/link";
 import React from "react";
@@ -8,7 +9,7 @@ export default function CartPage() {
   return (
     <Container className="relative flex min-h-[80vh] grow flex-col gap-10 pt-4 sm:gap-4 sm:pt-6 md:pt-10">
       <Link
-        href="/shop"
+        href={route.shop.path}
         className={cn(buttonVariants({ variant: "link" }), "absolute left-0 top-2 gap-1 sm:top-4")}
       >
         <Icons.LeftChevron size={16} />

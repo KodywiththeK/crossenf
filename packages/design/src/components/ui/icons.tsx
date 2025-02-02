@@ -7,6 +7,8 @@ import { CiSquarePlus } from "react-icons/ci";
 import { CiSquareMinus } from "react-icons/ci";
 import { PiTrashLight } from "react-icons/pi";
 import { FaAngleLeft } from "react-icons/fa6";
+import { AiFillHome } from "react-icons/ai";
+import { GiFruitBowl } from "react-icons/gi";
 
 function CartFill({ size = "24", color = "currentColor", className, ...props }: IconBaseProps) {
   return <FaShoppingCart {...props} color={color} size={size} className={className} />;
@@ -40,6 +42,14 @@ function LeftChevron({ size = "24", color = "currentColor", className, ...props 
   return <FaAngleLeft {...props} color={color} size={size} className={className} />;
 }
 
+function Home({ size = "24", color = "currentColor", className, ...props }: IconBaseProps) {
+  return <AiFillHome {...props} color={color} size={size} className={className} />;
+}
+
+function Shop({ size = "24", color = "currentColor", className, ...props }: IconBaseProps) {
+  return <GiFruitBowl {...props} color={color} size={size} className={className} />;
+}
+
 export const Icons = {
   CartFill,
   StarFill,
@@ -49,4 +59,6 @@ export const Icons = {
   Minus,
   Trash,
   LeftChevron,
+  Home,
+  Shop,
 };
