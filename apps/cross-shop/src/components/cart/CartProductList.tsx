@@ -2,8 +2,7 @@
 import { useCartStore } from "@/store/useCart";
 import React from "react";
 import CartProductCard from "@/components/templates/CartProductCard";
-import { Box, Button } from "@common/design";
-import Link from "next/link";
+import NoProductsInCart from "./NoProductsInCart";
 
 export default function CartProductList() {
   const { cart } = useCartStore();
@@ -16,12 +15,7 @@ export default function CartProductList() {
           </li>
         ))
       ) : (
-        <Box className="rounded-lg bg-gray-100 py-10 text-center text-base">
-          <p>장바구니에 상품이 없습니다.</p>
-          <Link href="/shop">
-            <Button variant={"link"}>상품 담으러 가기</Button>
-          </Link>
-        </Box>
+        <NoProductsInCart />
       )}
     </ul>
   );
