@@ -22,7 +22,7 @@ export default function PaymentCheckButton() {
       title: "결제가 완료되었습니다.",
       description: "다른 상품들도 더 둘러보세요!",
       action: (
-        <ToastAction altText="Go to Shop" onClick={() => router.push(route.cart.path)}>
+        <ToastAction altText="Go to Shop" onClick={() => router.push(route.shop.path)}>
           보러가기
         </ToastAction>
       ),

@@ -23,7 +23,7 @@ export default function RemoveCartItemButton({
     <Modal
       trigger={<ModalTrigger className={className}>{trigger}</ModalTrigger>}
       title={"상품 삭제"}
-      description={"해당 상품의 수량 모두가 삭제됩니다.\n상품을 장바구니에서 삭제하시겠습니까?"}
+      description={"상품을 장바구니에서 삭제하시겠습니까?"}
       confirmText={"삭제하기"}
       cancelText={"그대로 두기"}
       onConfirm={handleClick}
