@@ -14,29 +14,28 @@ export const productStatus = {
 type ProductSortingOptionType = {
   value: string;
   text: string;
-  sort: (p: Product[]) => void;
-  isDefault?: true;
+  sort: (p: Product[]) => Product[];
 };
 export const productSortingOptions: Record<string, ProductSortingOptionType> = {
   price_down: {
     value: "price_down",
-    text: "높은가격순",
-    sort: (p: Product[]) => p.sort((a, b) => b.discount_price - a.discount_price),
-    isDefault: true,
+    text: "가격 높은 순",
+    sort: (p: Product[]) => [...p].sort((a, b) => b.discount_price - a.discount_price),
   },
   price_up: {
     value: "price_up",
-    text: "낮은가격순",
-    sort: (p: Product[]) => p.sort((a, b) => a.discount_price - b.discount_price),
+    text: "가격 낮은 순",
+    sort: (p: Product[]) => [...p].sort((a, b) => a.discount_price - b.discount_price),
   },
   rating: {
     value: "rating",
-    text: "인기순",
-    sort: (p: Product[]) => p.sort((a, b) => b.star_rate_avg - a.star_rate_avg),
+    text: "인기 순",
+    sort: (p: Product[]) => [...p].sort((a, b) => b.star_rate_avg - a.star_rate_avg),
   },
   discount: {
     value: "discount",
-    text: "할인률순",
-    sort: (p: Product[]) => p.sort((a, b) => b.discount_rate - a.discount_rate),
+    text: "할인율 순",
+    sort: (p: Product[]) => [...p].sort((a, b) => b.discount_rate - a.discount_rate),
   },
 };
+export const defaultSortingOption = productSortingOptions.price_down;
