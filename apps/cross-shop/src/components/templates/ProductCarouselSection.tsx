@@ -12,6 +12,8 @@ type ProductCarouselSectionProps = {
   titleIcon?: string;
   products: Product[];
   filterFunction: (products: Product[]) => Product[];
+  link: string;
+  linkText?: string;
 };
 
 export default function ProductCarouselSection({
@@ -19,6 +21,8 @@ export default function ProductCarouselSection({
   titleIcon = "",
   products,
   filterFunction,
+  link,
+  linkText = "더 보기",
 }: ProductCarouselSectionProps) {
   const router = useRouter();
   const { isMax640 } = useResponsive();
@@ -36,9 +40,13 @@ export default function ProductCarouselSection({
         <Heading3>
           {title} {titleIcon}
         </Heading3>
-        <Button variant="link" className="font-medium" onClick={() => router.push("/shop")}>
-          더 보기
-          <Icons.RightChevron size={14} />
+        <Button
+          variant="link"
+          className="text-xs font-medium sm:text-sm"
+          onClick={() => router.push(link)}
+        >
+          {linkText}
+          <Icons.RightChevron size={12} />
         </Button>
       </Box>
       <Carousel
