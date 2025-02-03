@@ -13,7 +13,7 @@ export default function Header() {
   const { cart } = useCartStore();
   const isCartFull = cart.length >= 3;
   return (
-    <header className="bg-primary sticky top-0 z-40 w-full">
+    <header className="bg-primary fixed top-0 z-40 h-[104px] w-full sm:h-20">
       <Container className="flex w-full flex-col items-center justify-center gap-4 py-4 text-xl sm:flex-row sm:justify-between sm:gap-6 sm:py-5">
         <Link href={route.home.path}>
           <Image

@@ -28,7 +28,7 @@ export default function RootLayout({
         <TanstackQueryProvider>
           <div className="layout">
             <Header />
-            <main className="grow">{children}</main>
+            <main>{children}</main>
             <Footer />
           </div>
         </TanstackQueryProvider>

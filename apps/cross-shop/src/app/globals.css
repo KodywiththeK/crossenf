@@ -8,3 +8,15 @@
   margin: 0 auto;
   background-color: #ffffff;
 }
+
+.layout > main {
+  margin-bottom: 84px;
+  margin-top: 104px;
+  flex-grow: 1;
+}
+
+@media (min-width: 640px) {
+  .layout > main {
+    margin-top: 5rem;
+  }
+}
