@@ -1,0 +1,32 @@
+[
+  {
+    "id": 1,
+    "image": "https://s3cross-media.s3.amazonaws.com/shop_media/20250110_031255.jpg",
+    "background": "#7699f4"
+  },
+  {
+    "id": 2,
+    "image": "https://s3cross-media.s3.amazonaws.com/shop_media/20241014_100509.jpg",
+    "background": "#dcdccb"
+  },
+  {
+    "id": 3,
+    "image": "https://s3cross-media.s3.amazonaws.com/shop_media/20241223_011916.jpg",
+    "background": "#6b372f"
+  },
+  {
+    "id": 4,
+    "image": "https://s3cross-media.s3.amazonaws.com/shop_media/20250121_061844.jpg",
+    "background": "#7699f4"
+  },
+  {
+    "id": 5,
+    "image": "https://s3cross-media.s3.amazonaws.com/shop_media/20250110_052234.png",
+    "background": "#18182f"
+  },
+  {
+    "id": 6,
+    "image": "https://s3cross-media.s3.amazonaws.com/shop_media/20241223_012113.jpg",
+    "background": "#40a6a4"
+  }
+]
