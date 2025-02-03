@@ -109,7 +109,7 @@ type BaseAlertDialogProps = {
   onConfirm?: () => void;
   onCancel?: () => void;
   children?: React.ReactNode;
-  className?: string;
+  forceMount?: true;
 };
 
 export function Modal({
@@ -121,11 +121,12 @@ export function Modal({
   onConfirm,
   onCancel,
   children,
+  forceMount = undefined,
 }: BaseAlertDialogProps) {
   return (
     <AlertDialog>
       {trigger}
-      <AlertDialogContent>
+      <AlertDialogContent forceMount={forceMount}>
         <AlertDialogHeader>
           <AlertDialogTitle>{title}</AlertDialogTitle>
           <AlertDialogDescription>{description}</AlertDialogDescription>
