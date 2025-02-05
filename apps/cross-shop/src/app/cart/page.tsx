@@ -5,8 +5,10 @@ import TotalPriceAndOrder from "@/components/cart/TotalPriceAndOrder";
 import MainContainer from "@/components/layout/MainContainer";
 import Heading3 from "@/components/ui/Heading3";
 import { Box } from "@common/design";
+import { generateMetadata } from "@/utils/metadata";
 
-export const dynamic = "force-dynamic";
+export const metadata = generateMetadata("cart");
+
 export default function CartPage() {
   return (
     <MainContainer className="relative items-center pt-12 sm:pt-20">

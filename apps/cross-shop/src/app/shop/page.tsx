@@ -4,7 +4,9 @@ import ProductList from "@/components/shop/ProductList";
 import Heading3 from "@/components/ui/Heading3";
 import { Box } from "@common/design";
 import ProductSortDropdown from "@/components/ui/ProductSortDropdown";
+import { generateMetadata } from "@/utils/metadata";
 
+export const metadata = generateMetadata("shop");
 export default function ShopPage() {
   return (
     <MainContainer>
