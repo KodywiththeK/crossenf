@@ -28,6 +28,7 @@ export default function ProductCard({ product, isLoading }: ProductCardProps) {
           width={400}
           height={400}
           className="aspect-square h-auto w-full object-cover"
+          priority
         />
 
         {isSoldOut && (

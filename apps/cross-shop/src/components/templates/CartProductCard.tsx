@@ -8,16 +8,14 @@ import RemoveCartItemButton from "../ui/RemoveCartItemButton";
 import { useCartStore } from "@/store/useCart";
 
 type CartProductCardProps = {
-  cartItem?: CartItem;
-  isLoading?: boolean;
+  cartItem: CartItem;
 };
-export default function CartProductCard({ cartItem, isLoading }: CartProductCardProps) {
-  if (isLoading) return <CartProductCardSkeleton />;
-  if (!cartItem) return null;
 
+export default function CartProductCard({ cartItem }: CartProductCardProps) {
   const { thumbnail_img_url, name, discount_price, discount_rate, price, id, isReady, quantity } =
     cartItem;
   const { updateIsReady } = useCartStore();
+
   return (
     <Box className="xs:flex-row flex w-full flex-col items-center gap-4 rounded-lg bg-gray-100 p-2 sm:items-start sm:p-4">
       <Box className="flex gap-2">
@@ -25,7 +23,7 @@ export default function CartProductCard({ cartItem, isLoading }: CartProductCard
           id={String(id)}
           className="flex-shrink-0"
           checked={isReady}
-          onCheckedChange={(isReady: boolean) => updateIsReady(id, isReady)}
+          onCheckedChange={(isChecked: boolean) => updateIsReady(id, isChecked)}
         />
         <Label
           htmlFor={String(id)}
@@ -35,8 +33,8 @@ export default function CartProductCard({ cartItem, isLoading }: CartProductCard
           )}
         >
           <Image
-            width={100}
-            height={100}
+            width={128}
+            height={128}
             src={thumbnail_img_url}
             alt={name}
             className="aspect-square h-auto w-24 object-cover sm:w-32"
@@ -61,12 +59,12 @@ export default function CartProductCard({ cartItem, isLoading }: CartProductCard
   );
 }
 
-function CartProductCardSkeleton() {
+export function CartProductCardSkeleton() {
   return (
     <Box className="xs:flex-row flex w-full flex-col items-center gap-4 rounded-lg bg-gray-100 p-2 sm:items-start sm:p-4">
       <Box className="flex gap-2">
         <Skeleton className="h-5 w-5 rounded" />
-        <Skeleton className="h-[100px] w-[100px] rounded-lg" />
+        <Skeleton className="aspect-square h-auto w-24 rounded-lg sm:w-32" />
       </Box>
       <Box className="xs:items-start flex w-full flex-col items-center gap-2">
         <Skeleton className="h-4 w-2/3 rounded-md" />
