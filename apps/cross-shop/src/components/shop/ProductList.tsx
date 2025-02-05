@@ -4,8 +4,9 @@ import { useInfiniteProducts } from "@/hooks/useProducts";
 import { useInfiniteScroll } from "@/hooks/useInfiniteScroll";
 import { useSearchParams } from "next/navigation";
 import ProductCard from "../templates/ProductCard";
-import { defaultSortingOption, productSortingOptions } from "@/constant/product";
-import { useMemo } from "react";
+import { useEffect, useState } from "react";
+import { getSortedProducts } from "@/utils/helpers";
+import { pageParams } from "@/constant/params";
 
 type Props = {
   isLoading?: boolean;
@@ -20,8 +21,13 @@ export default function ProductList({ isLoading }: Props) {
     );
 
   const searchParams = useSearchParams();
-  const sortKey = searchParams.get("sort") || defaultSortingOption.value;
-  const sortOption = productSortingOptions[sortKey] || defaultSortingOption;
+  const [sortKey, setSortKey] = useState(pageParams.sort.defaultValue);
+
+  useEffect(() => {
+    const paramSortKey = searchParams.get(pageParams.sort.key) || pageParams.sort.defaultValue;
+    setSortKey(paramSortKey);
+  }, [searchParams]);
+
   const {
     data,
     fetchNextPage,
@@ -30,11 +36,12 @@ export default function ProductList({ isLoading }: Props) {
     isFetchingNextPage,
   } = useInfiniteProducts(sortKey);
 
-  const productList = useMemo(() => {
-    if (!data) return [];
-    const sortedProducts = [...data.pages.flatMap((page) => page.products)];
-    return sortOption.sort(sortedProducts);
-  }, [data, sortOption]);
+  const productList = data
+    ? getSortedProducts(
+        data.pages.flatMap((page) => page.products),
+        sortKey,
+      )
+    : [];
 
   const observerRef = useInfiniteScroll(fetchNextPage, hasNextPage || false);
 

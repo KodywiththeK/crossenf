@@ -1,4 +1,4 @@
-import { Product } from "@/types/products";
+import { SortingProperty, SortingOptionType } from "@/types/products";
 
 export const productStatus = {
   SOLD_OUT: {
@@ -11,31 +11,42 @@ export const productStatus = {
   },
 };
 
-type ProductSortingOptionType = {
-  value: string;
-  text: string;
-  sort: (p: Product[]) => Product[];
-};
-export const productSortingOptions: Record<string, ProductSortingOptionType> = {
-  price_down: {
-    value: "price_down",
+// 정렬 우선순위
+const { PRICE, RATING, DISCOUNT, ID } = SortingProperty;
+export const defaultSortPriorities: SortingProperty[] = [PRICE, RATING, DISCOUNT, ID];
+
+// Enum 기반 정렬 옵션
+export const productSortingOptions: Record<string, SortingOptionType> = {
+  price_high: {
+    value: "price_high",
     text: "가격 높은 순",
-    sort: (p: Product[]) => [...p].sort((a, b) => b.discount_price - a.discount_price),
+    primary: PRICE,
+    ascending: false,
   },
-  price_up: {
-    value: "price_up",
+  price_low: {
+    value: "price_low",
     text: "가격 낮은 순",
-    sort: (p: Product[]) => [...p].sort((a, b) => a.discount_price - b.discount_price),
+    primary: PRICE,
+    ascending: true,
   },
   rating: {
     value: "rating",
-    text: "평점 좋은 순",
-    sort: (p: Product[]) => [...p].sort((a, b) => b.star_rate_avg - a.star_rate_avg),
+    text: "평점 높은 순",
+    primary: RATING,
+    ascending: false,
   },
   discount: {
     value: "discount",
     text: "할인율 높은 순",
-    sort: (p: Product[]) => [...p].sort((a, b) => b.discount_rate - a.discount_rate),
+    primary: DISCOUNT,
+    ascending: false,
+  },
+  id: {
+    value: "id",
+    text: "최신 상품 순", // id 값이 높을수록 최신 상품이라고 가정
+    primary: ID,
+    ascending: false,
   },
 };
-export const defaultSortingOption = productSortingOptions.price_down;
+
+export const defaultSortingOption = productSortingOptions.price_high;
