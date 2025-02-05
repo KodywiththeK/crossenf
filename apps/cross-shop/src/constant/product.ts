@@ -29,12 +29,12 @@ export const productSortingOptions: Record<string, ProductSortingOptionType> = {
   },
   rating: {
     value: "rating",
-    text: "인기 순",
+    text: "평점 좋은 순",
     sort: (p: Product[]) => [...p].sort((a, b) => b.star_rate_avg - a.star_rate_avg),
   },
   discount: {
     value: "discount",
-    text: "할인율 순",
+    text: "할인율 높은 순",
     sort: (p: Product[]) => [...p].sort((a, b) => b.discount_rate - a.discount_rate),
   },
 };

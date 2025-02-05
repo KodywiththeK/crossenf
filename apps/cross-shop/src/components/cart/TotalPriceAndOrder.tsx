@@ -13,7 +13,7 @@ export default function TotalPriceAndOrder() {
   );
 
   return (
-    <Box className="sticky bottom-0 w-full space-y-4 rounded-lg border p-4">
+    <Box className="w-full space-y-4 rounded-lg border bg-white p-4">
       <Box className="flex items-center justify-center gap-2">
         <span className="text-lg font-semibold">Total Price:</span>
         <span className="text-xl font-bold">{Math.floor(totalPrice).toLocaleString()} 원</span>

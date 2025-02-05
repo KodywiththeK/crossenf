@@ -27,13 +27,12 @@ export default function ProductSortDropdown() {
   return (
     <Dropdown>
       <DropdownTrigger asChild>
-        <Button variant="outline" className="w-28 font-medium">
-          {selectedSort.text}
+        <Button variant="outline" className="w-32 justify-between font-medium">
+          <span>{selectedSort.text}</span>
           <Icons.DownChevron size={16} />
         </Button>
       </DropdownTrigger>
-      <DropdownContent className="right-0 w-28 space-y-1">
-        {/* 드롭다운을 오른쪽 정렬 */}
+      <DropdownContent className="w-32 space-y-1">
         {Object.entries(productSortingOptions).map(([key, option]) => (
           <DropdownItem
             key={key}
