@@ -34,8 +34,6 @@ export function generateMetadata(
       description: meta.description,
       images: [siteMetadata.global.twitterImage],
     },
-    viewport:
-      "width=device-width, initial-scale=1, minimum-scale=1, viewport-fit=cover, user-scalable=no",
     ...overrides, // 필요하면 추가 메타데이터 덮어쓰기 가능
   };
 }
