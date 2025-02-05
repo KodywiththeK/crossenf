@@ -1,6 +1,6 @@
 export async function apiClient<T>(endpoint: string, options: RequestInit = {}): Promise<T> {
   try {
-    const response = await fetch(`/api/${endpoint}`, {
+    const response = await fetchWithDelay(`/api/${endpoint}`, {
       ...options,
       headers: {
         "Content-Type": "application/json",
@@ -17,4 +17,9 @@ export async function apiClient<T>(endpoint: string, options: RequestInit = {}):
     console.error(`API Client 요청 중 에러 (${endpoint}):`, error);
     throw new Error(`API Client 요청 실패 (${endpoint})`);
   }
+}
+
+async function fetchWithDelay(url: string, options: RequestInit) {
+  await new Promise((resolve) => setTimeout(resolve, 500)); // 0.5초 딜레이 추가
+  return fetch(url, options);
 }

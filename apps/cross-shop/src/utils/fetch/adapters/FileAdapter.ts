@@ -7,6 +7,7 @@ export class FileAdapter implements FetchAdapter {
     const filePath = path.join(process.cwd(), "data", filename);
 
     try {
+      await delay(500); // 0.5초 딜레이 추가
       const fileContent = await fs.readFile(filePath, "utf-8");
       return JSON.parse(fileContent) as T;
     } catch (error) {
@@ -14,4 +15,8 @@ export class FileAdapter implements FetchAdapter {
       throw new Error(`${filename} 파일을 불러오지 못했습니다.`);
     }
   }
+}
+
+function delay(ms: number) {
+  return new Promise((resolve) => setTimeout(resolve, ms));
 }
