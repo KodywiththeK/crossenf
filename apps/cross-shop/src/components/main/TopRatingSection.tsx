@@ -6,17 +6,21 @@ import { productSortingOptions } from "@/constant/product";
 
 type Props = {
   products: Product[];
+  isLoading?: boolean;
 };
 
-export default function TopRatingSection({ products }: Props) {
+export default function TopRatingSection({ products, isLoading }: Props) {
+  const isClient = typeof window !== "undefined";
   return (
     <ProductCarouselSection
-      title="Top Ratings"
+      title="TOP RATINGS"
       titleIcon="⭐️"
+      description="평점이 높은 상품을 모아봤어요!"
       products={products}
       filterFunction={getTopRatingProducts}
       link={`/shop?sort=${productSortingOptions.rating.value}`}
-      linkText={`${productSortingOptions.rating.text}으로 더 보기`}
+      linkText={`${productSortingOptions.rating.text} 더 보기`}
+      isLoading={!isClient || isLoading}
     />
   );
 }

@@ -1,4 +1,4 @@
-import { Box } from "@common/design";
+import { Box, Skeleton } from "@common/design";
 import Image from "next/image";
 import React from "react";
 import PriceTag from "../ui/PriceTag";
@@ -8,10 +8,14 @@ import AddToCartButton from "../ui/AddToCartButton";
 import { productStatus } from "@/constant/product";
 
 type ProductCardProps = {
-  product: Product;
+  product?: Product;
+  isLoading?: boolean;
 };
 
-export default function ProductCard({ product }: ProductCardProps) {
+export default function ProductCard({ product, isLoading }: ProductCardProps) {
+  if (isLoading) return <ProductCardLoading />;
+  if (!product) return null;
+
   const { SOLD_OUT } = productStatus;
   const isSoldOut = product.status === SOLD_OUT.value;
 
@@ -46,3 +50,14 @@ export default function ProductCard({ product }: ProductCardProps) {
     </Box>
   );
 }
+
+const ProductCardLoading = () => (
+  <Box className="flex w-full flex-col items-start gap-2">
+    <Skeleton className="aspect-square w-full rounded-lg" />
+    <Box className="w-full space-y-2 px-2">
+      <Skeleton className="h-9 w-full" />
+      <Skeleton className="h-6 w-1/3 sm:w-1/2" />
+      <Skeleton className="h-5 w-1/2 sm:w-3/5" />
+    </Box>
+  </Box>
+);

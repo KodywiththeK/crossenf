@@ -1,17 +1,34 @@
 "use client";
 
-import { useProducts } from "@/hooks/useProducts";
+import { useInfiniteProducts } from "@/hooks/useProducts";
 import { useInfiniteScroll } from "@/hooks/useInfiniteScroll";
 import { useSearchParams } from "next/navigation";
 import ProductCard from "../templates/ProductCard";
 import { defaultSortingOption, productSortingOptions } from "@/constant/product";
 import { useMemo } from "react";
 
-export default function ProductList() {
+type Props = {
+  isLoading?: boolean;
+};
+
+export default function ProductList({ isLoading }: Props) {
+  if (isLoading)
+    return (
+      <ProductListContainer>
+        <ProductListLoading cardNum={5} />
+      </ProductListContainer>
+    );
+
   const searchParams = useSearchParams();
   const sortKey = searchParams.get("sort") || defaultSortingOption.value;
   const sortOption = productSortingOptions[sortKey] || defaultSortingOption;
-  const { data, fetchNextPage, hasNextPage, isLoading, error } = useProducts(sortKey);
+  const {
+    data,
+    fetchNextPage,
+    hasNextPage,
+    isLoading: isFetching,
+    isFetchingNextPage,
+  } = useInfiniteProducts(sortKey);
 
   const productList = useMemo(() => {
     if (!data) return [];
@@ -21,19 +38,33 @@ export default function ProductList() {
 
   const observerRef = useInfiniteScroll(fetchNextPage, hasNextPage || false);
 
-  if (isLoading) return <p>Loading...</p>;
-  if (error) return <p>Error: {error.message}</p>;
-
   return (
     <>
-      <ul className="xs:grid-cols-2 grid grid-cols-1 gap-x-4 gap-y-6 md:grid-cols-3 md:gap-x-6 md:gap-y-10">
-        {productList.map((product) => (
-          <li key={product.id}>
-            <ProductCard product={product} />
-          </li>
-        ))}
-      </ul>
+      <ProductListContainer>
+        {isFetching ? (
+          <ProductListLoading cardNum={5} />
+        ) : (
+          productList.map((product) => (
+            <li key={product.id}>
+              <ProductCard product={product} />
+            </li>
+          ))
+        )}
+        {isFetchingNextPage && <ProductListLoading cardNum={5} />}
+      </ProductListContainer>
       {hasNextPage && <div ref={observerRef} className="h-10" />}
     </>
   );
 }
+
+const ProductListContainer = ({ children }: { children: React.ReactNode }) => (
+  <ul className="xs:grid-cols-2 grid w-full grid-cols-1 gap-x-4 gap-y-6 md:grid-cols-3 md:gap-x-6 md:gap-y-10">
+    {children}
+  </ul>
+);
+const ProductListLoading = ({ cardNum }: { cardNum: number }) =>
+  new Array(cardNum).fill(null).map((_, index) => (
+    <li key={index}>
+      <ProductCard isLoading />
+    </li>
+  ));
