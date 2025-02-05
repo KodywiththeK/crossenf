@@ -27,8 +27,9 @@ export default function ProductCard({ product, isLoading }: ProductCardProps) {
           alt={product.name}
           width={400}
           height={400}
-          className="aspect-square object-cover"
+          className="aspect-square h-auto w-full object-cover"
         />
+
         {isSoldOut && (
           <Box className="absolute inset-0 flex items-center justify-center bg-black/60 text-xl font-semibold text-white">
             {SOLD_OUT.text}

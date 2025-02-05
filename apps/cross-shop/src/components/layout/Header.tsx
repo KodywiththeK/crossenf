@@ -20,7 +20,7 @@ export default function Header() {
             alt="Logo"
             width={178}
             height={20}
-            className="shrink-0"
+            className="h-auto w-44 shrink-0 object-cover"
           />
         </Link>
         <Box className="flex items-center gap-2 lg:gap-3">

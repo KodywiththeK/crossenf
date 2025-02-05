@@ -35,7 +35,7 @@ export default function MainBannerSection({ eventBanners, isLoading }: Props) {
               alt={`main banner ${id}`}
               width={1200}
               height={500}
-              className="w-full object-contain"
+              className="h-auto w-full object-contain"
             />
             <Button
               onClick={() => router.push(route.shop.path)}

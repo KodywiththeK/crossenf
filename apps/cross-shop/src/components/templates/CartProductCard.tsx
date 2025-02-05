@@ -34,7 +34,14 @@ export default function CartProductCard({ cartItem, isLoading }: CartProductCard
             isReady && "border-primary",
           )}
         >
-          <Image width={100} height={100} src={thumbnail_img_url} alt={name} />
+          <Image
+            width={100}
+            height={100}
+            src={thumbnail_img_url}
+            alt={name}
+            className="aspect-square h-auto w-24 object-cover sm:w-32"
+            priority
+          />
         </Label>
       </Box>
       <Box className="xs:items-start flex w-full flex-col items-center gap-2">
