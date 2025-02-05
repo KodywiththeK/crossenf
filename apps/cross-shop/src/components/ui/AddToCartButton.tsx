@@ -33,7 +33,7 @@ export default function AddToCartButton({ product }: AddToCartButtonProps) {
   const handleAddToCart = () => {
     if (isCartFull && !cartItem) return;
 
-    const cartProduct: CartItem = { ...product, quantity: 1, isReady: false };
+    const cartProduct: CartItem = { ...product, quantity: 1, isReady: true };
     addToCart(cartProduct);
     toast({
       title: "장바구니에 담았습니다.",
