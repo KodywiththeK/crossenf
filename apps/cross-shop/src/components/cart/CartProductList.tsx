@@ -9,7 +9,7 @@ type Props = {
   isLoading?: boolean;
 };
 export default function CartProductList({ isLoading }: Props) {
-  if (isLoading || window === undefined)
+  if (isLoading)
     return (
       <ul className="flex w-full flex-col gap-2">
         {new Array(3).fill(null).map((_, index) => (
@@ -38,7 +38,7 @@ export default function CartProductList({ isLoading }: Props) {
         {cart.length > 0 ? (
           cart.map((item) => (
             <li key={item.id}>
-              <CartProductCard cartItem={item} />
+              <CartProductCard cartItem={item} isLoading={window === undefined} />
             </li>
           ))
         ) : (
