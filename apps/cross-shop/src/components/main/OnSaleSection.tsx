@@ -10,7 +10,6 @@ type Props = {
 };
 
 export default function OnSaleSection({ products, isLoading }: Props) {
-  const isClient = typeof window !== "undefined";
   return (
     <ProductCarouselSection
       title="ON SALE"
@@ -20,7 +19,7 @@ export default function OnSaleSection({ products, isLoading }: Props) {
       filterFunction={getHotDealProducts}
       link={`/shop?sort=${productSortingOptions.discount.value}`}
       linkText={`${productSortingOptions.discount.text} 더 보기`}
-      isLoading={!isClient || isLoading}
+      isLoading={isLoading}
     />
   );
 }

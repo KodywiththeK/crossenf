@@ -1,11 +1,12 @@
 "use client";
-import { Box, Button, Carousel, Icons } from "@common/design";
 import React from "react";
-import Heading3 from "../ui/Heading3";
-import { Product } from "@/types/products";
-import ProductCard from "../templates/ProductCard";
-import { useResponsive } from "@/hooks/useResponsive";
 import { useRouter } from "next/navigation";
+import { Box, Button, Carousel, Icons } from "@common/design";
+import { Product } from "@/types/products";
+import ProductCard from "@/components/templates/ProductCard";
+import Heading3 from "@/components/ui/Heading3";
+import { useResponsive } from "@/hooks/useResponsive";
+import { useIsClient } from "@/hooks/useIsClient";
 
 type ProductCarouselSectionProps = {
   title: string;
@@ -31,6 +32,7 @@ export default function ProductCarouselSection({
   const router = useRouter();
   const { isMax640 } = useResponsive();
   const isMobile = isMax640();
+  const isClient = useIsClient();
 
   // 특정 필터링 로직을 적용해 필요한 상품 리스트 가져오기
   const filteredProducts = filterFunction(products);
@@ -61,7 +63,7 @@ export default function ProductCarouselSection({
           <Icons.RightChevron size={12} />
         </Button>
       </Box>
-      {isLoading ? (
+      {isLoading || !isClient ? (
         <Box className="flex w-full items-center gap-4">{skeletonSlides}</Box>
       ) : (
         <Carousel

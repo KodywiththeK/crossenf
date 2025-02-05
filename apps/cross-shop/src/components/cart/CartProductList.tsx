@@ -4,6 +4,7 @@ import React from "react";
 import CartProductCard from "@/components/templates/CartProductCard";
 import NoProductsInCart from "./NoProductsInCart";
 import { Box, Checkbox, cn, Label } from "@common/design";
+import { useIsClient } from "@/hooks/useIsClient";
 
 type Props = {
   isLoading?: boolean;
@@ -17,8 +18,9 @@ export default function CartProductList({ isLoading }: Props) {
         ))}
       </ul>
     );
-
+  const isClient = useIsClient();
   const { cart, updateIsReady } = useCartStore();
+
   return (
     <Box className="flex w-full flex-col gap-4">
       <Box className="flex items-center gap-2">
@@ -38,7 +40,7 @@ export default function CartProductList({ isLoading }: Props) {
         {cart.length > 0 ? (
           cart.map((item) => (
             <li key={item.id}>
-              <CartProductCard cartItem={item} isLoading={window === undefined} />
+              <CartProductCard cartItem={item} isLoading={!isClient} />
             </li>
           ))
         ) : (

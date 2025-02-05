@@ -10,7 +10,6 @@ type Props = {
 };
 
 export default function TopRatingSection({ products, isLoading }: Props) {
-  const isClient = typeof window !== "undefined";
   return (
     <ProductCarouselSection
       title="TOP RATINGS"
@@ -20,7 +19,7 @@ export default function TopRatingSection({ products, isLoading }: Props) {
       filterFunction={getTopRatingProducts}
       link={`/shop?sort=${productSortingOptions.rating.value}`}
       linkText={`${productSortingOptions.rating.text} 더 보기`}
-      isLoading={!isClient || isLoading}
+      isLoading={isLoading}
     />
   );
 }
