@@ -2,7 +2,6 @@
   "compilerOptions": {
     "rootDir": "../../",
     "baseUrl": ".",
-
     "lib": ["dom", "dom.iterable", "esnext"],
     "allowJs": true,
     "skipLibCheck": true,
@@ -22,7 +21,6 @@
     ],
     "paths": {
       "@/*": ["./src/*"],
-      "@common/utils": ["../../packages/common/src/main.ts"],
       "@common/design": ["../../packages/design/src/main.ts"]
     }
   },
@@ -32,7 +30,6 @@
     "**/*.tsx",
     ".next/types/**/*.ts",
     "src",
-    "../../packages/common/src/**/*",
     "../../packages/design/src/**/*",
     "tailwind.config.js"
   ],

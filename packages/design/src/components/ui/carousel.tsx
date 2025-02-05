@@ -1,10 +1,7 @@
 "use client";
 import { cn } from "../../lib";
 import React, { useEffect, useRef } from "react";
-import "swiper/css";
-import "swiper/css/effect-fade";
-import "swiper/css/navigation";
-import "swiper/css/pagination";
+import "swiper/swiper-bundle.css";
 import { Autoplay, EffectFade, Navigation, Pagination } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { AutoplayOptions, PaginationOptions, Swiper as SwiperClass } from "swiper/types";

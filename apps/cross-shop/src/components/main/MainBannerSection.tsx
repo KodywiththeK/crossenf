@@ -20,9 +20,9 @@ type Props = {
 };
 
 export default function MainBannerSection({ eventBanners, isLoading }: Props) {
-  const router = useRouter();
-
   if (isLoading) return <MainBannerSectionLoading />;
+
+  const router = useRouter();
 
   const bannerSlides = eventBanners.map((eventBanner) => {
     const { id, background, image } = eventBanner;
@@ -36,6 +36,7 @@ export default function MainBannerSection({ eventBanners, isLoading }: Props) {
               width={1200}
               height={500}
               className="h-auto w-full object-contain"
+              priority
             />
             <Button
               onClick={() => router.push(route.shop.path)}
@@ -68,8 +69,7 @@ const MainBannerSectionLoading = () => (
   <Skeleton className="relative w-full">
     <Container className="relative flex max-h-[500px] items-center justify-center overflow-hidden">
       <Skeleton className="flex h-[500px] w-full items-center justify-center bg-gray-100 sm:h-[350px] md:h-[400px]" />
-
-      <Skeleton className="bottom- absolute mx-auto h-10 w-[200px] sm:bottom-14 md:h-14 lg:bottom-20" />
+      <Skeleton className="absolute bottom-8 mx-auto h-10 w-[200px] sm:bottom-14 md:h-14 lg:bottom-20" />
     </Container>
   </Skeleton>
 );

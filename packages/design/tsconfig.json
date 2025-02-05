@@ -2,7 +2,6 @@
   "compilerOptions": {
     "baseUrl": ".",
     "paths": {
-      // "@common/design": ["src/main.tsx"],
       "@/*": ["./src/*"]
     },
     "target": "ES2020",

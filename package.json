@@ -7,16 +7,16 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "lint": "eslint .",
     "format": "prettier --write .",
-    "prepare": "husky i",
+    "prepare": "husky i && husky install",
     "postinstall": "npx mrm lint-staged",
-    "common": "pnpm --filter @common/utils",
-    "components": "pnpm --filter @common/components",
+    "design": "pnpm --filter @common/design",
     "shop": "pnpm --filter cross-shop"
   },
   "lint-staged": {
     "**/*.{js,ts,tsx}": [
       "eslint --fix"
-    ]
+    ],
+    "*.js": "eslint --cache --fix"
   },
   "keywords": [],
   "author": "",
