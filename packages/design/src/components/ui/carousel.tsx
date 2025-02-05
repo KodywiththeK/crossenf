@@ -7,12 +7,12 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 import { Autoplay, EffectFade, Navigation, Pagination } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { PaginationOptions, Swiper as SwiperClass } from "swiper/types";
+import { AutoplayOptions, PaginationOptions, Swiper as SwiperClass } from "swiper/types";
 
 export type CarouselProps = {
   slides: React.ReactNode[]; // 슬라이드에 들어갈 내용
   loop?: boolean; // 무한 루프 여부
-  autoplay?: boolean | { delay: number }; // 자동 재생 설정
+  autoplay?: AutoplayOptions | boolean;
   spaceBetween?: number; // 슬라이드 간 간격
   slidesPerView?: number; // 한 번에 보여줄 슬라이드 수
   slidesPerGroup?: number; // 한 번에 넘어갈 슬라이드 수
@@ -78,7 +78,7 @@ export const Carousel: React.FC<CarouselProps> = ({
       id={id}
       loop={loop}
       effect={effect}
-      autoplay={autoplay === true ? { delay: 3000 } : autoplay}
+      autoplay={autoplay}
       spaceBetween={spaceBetween}
       slidesPerView={slidesPerView}
       slidesPerGroup={slidesPerGroup ? Math.floor(slidesPerGroup) : undefined}
